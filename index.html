@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Оставить отзыв</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h2>Оставьте ваш отзыв</h2>
-    <textarea id="review" rows="5" cols="30" placeholder="Введите ваш отзыв..."></textarea>
-    <button onclick="sendReview()">Отправить</button>
+<body class="d-flex flex-column align-items-center justify-content-center vh-100">
 
-    <script>
-        let tg = window.Telegram.WebApp;
-        tg.expand(); // Разворачиваем WebApp
+    <div class="container text-center">
+        <h2 class="mb-3">Оставьте ваш отзыв</h2>
 
-        function sendReview() {
-            let reviewText = document.getElementById("review").value;
-            if (reviewText.trim() === "") {
-                alert("Пожалуйста, напишите отзыв.");
-                return;
-            }
+        <!-- Рейтинг звёзд -->
+        <div class="rating mb-3">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
 
-            tg.sendData(JSON.stringify({ review: reviewText })); // Отправка данных в бота
-            tg.close(); // Закрываем WebApp
-        }
-    </script>
+        <textarea id="review" class="form-control mb-3" rows="4" placeholder="Введите ваш отзыв..."></textarea>
+        <button id="sendReview" class="btn btn-primary">Отправить</button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>

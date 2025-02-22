@@ -1,28 +1,20 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
     text-align: center;
     padding: 20px;
-    background-color: #f5f5f5;
 }
 
-textarea {
-    width: 90%;
-    max-width: 400px;
-    height: 100px;
-    padding: 10px;
-    font-size: 16px;
-}
-
-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
+.rating {
+    font-size: 30px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+.star {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.star:hover, .star.selected {
+    color: gold;
 }
